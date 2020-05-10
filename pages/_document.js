@@ -5,7 +5,13 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <title>AST Modern</title>
+          <meta
+            name="description"
+            content="A quick and easy way to prototype babel plugins in the browser!"
+          />
+        </Head>
         <body>
           <div
             style={{
