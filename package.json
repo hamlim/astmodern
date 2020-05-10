@@ -5,11 +5,34 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "now",
+    "deploy-prod": "now --prod"
   },
   "dependencies": {
-    "next": "9.3.6",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "@babel/generator": "7.9.6",
+    "@babel/parser": "7.9.6",
+    "@babel/runtime": "7.9.6",
+    "@babel/template": "7.8.6",
+    "@matthamlin/component-library": "3.3.0",
+    "@matthamlin/error-boundary": "1.0.1",
+    "@matthamlin/use-local-storage": "1.0.0",
+    "next": "9.3.7-canary.18",
+    "react": "experimental",
+    "react-dom": "experimental",
+    "styled-components": "5.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-transform-runtime": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "@babel/preset-react": "7.9.4",
+    "@zeit/next-css": "1.0.1",
+    "babel-plugin-styled-components": "1.10.7",
+    "monaco-editor-webpack-plugin": "1.9.0",
+    "next-fonts": "1.1.0",
+    "next-transpile-modules": "3.3.0"
   }
 }
