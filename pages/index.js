@@ -305,34 +305,40 @@ function Sandbox() {
   let deferredTransform = useDeferredValue(transform, { timeoutMs: 2500 })
 
   return (
-    <ThemeProvider>
-      <Box display="grid" flexGrow={1} gridTemplateColumns="1fr 1fr">
-        <Box border="solid 1px">
-          <Editor value={source} onChange={setSource} minHeight="50vh" />
-          <Editor value={transform} onChange={setTransform} minHeight="50vh" />
-        </Box>
-        <Box border="solid 1px">
-          <Suspense fallback="Loading AST Preview...">
-            <ErrorBoundary key={deferredSource} Fallback={ErrorEditor}>
-              <ASTPreview source={deferredSource} />
-            </ErrorBoundary>
-          </Suspense>
-          <Suspense fallback="Loading transformed source...">
-            <ErrorBoundary key={deferredSource + deferredTransform} Fallback={ErrorEditor}>
-              <Transformed source={deferredSource} transform={deferredTransform} />
-            </ErrorBoundary>
-          </Suspense>
-        </Box>
+    <Box display="grid" flexGrow={1} gridTemplateColumns="1fr 1fr">
+      <Box border="solid 1px">
+        <Editor value={source} onChange={setSource} minHeight="50vh" />
+        <Editor value={transform} onChange={setTransform} minHeight="50vh" />
       </Box>
-    </ThemeProvider>
+      <Box border="solid 1px">
+        <Suspense fallback="Loading AST Preview...">
+          <ErrorBoundary key={deferredSource} Fallback={ErrorEditor}>
+            <ASTPreview source={deferredSource} />
+          </ErrorBoundary>
+        </Suspense>
+        <Suspense fallback="Loading transformed source...">
+          <ErrorBoundary key={deferredSource + deferredTransform} Fallback={ErrorEditor}>
+            <Transformed source={deferredSource} transform={deferredTransform} />
+          </ErrorBoundary>
+        </Suspense>
+      </Box>
+    </Box>
   )
 }
 
-export default function Wrapped() {
+function Wrapped() {
   let [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
   if (mounted) {
     return <Sandbox />
   }
   return null
+}
+
+export default function Entry() {
+  return (
+    <ThemeProvider>
+      <Wrapped />
+    </ThemeProvider>
+  )
 }
