@@ -17,7 +17,7 @@
     "@matthamlin/component-library": "3.3.0",
     "@matthamlin/error-boundary": "1.0.1",
     "@matthamlin/use-local-storage": "1.0.0",
-    "next": "9.3.7-canary.18",
+    "next": "11.1.0",
     "react": "experimental",
     "react-dom": "experimental",
     "styled-components": "5.1.0"
