@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/generator": "7.9.6",
     "@babel/parser": "7.9.6",
-    "@babel/runtime": "7.9.6",
+    "@babel/runtime": "7.26.10",
     "@babel/template": "7.8.6",
     "@matthamlin/component-library": "3.3.0",
     "@matthamlin/error-boundary": "1.0.1",
